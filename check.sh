@@ -10,4 +10,4 @@ docker ps
 
 # List compose files
 echo "Compose files:"
-find . -name docker-compose.yml -type f
+find / -name docker-compose.yml -type f
