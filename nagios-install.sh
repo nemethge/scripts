@@ -9,7 +9,7 @@ if [ -f /var/run/reboot-required ]; then
 fi
 
 # Install necessary packages
-sudo apt install vim wget curl build-essential unzip openssl libssl-dev apache2 php libapache2-mod-php php-gd libgd-dev
+sudo apt install vim wget curl build-essential unzip openssl libssl-dev apache2 php libapache2-mod-php php-gd libgd-dev -y
 
 # Navigate to home directory
 cd ~
