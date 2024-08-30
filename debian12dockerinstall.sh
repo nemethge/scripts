@@ -25,3 +25,9 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 # 7. Ellenőrizd a Docker telepítését:
 sudo docker run hello-world
+
+-------------------------------------------------------
+
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $(whoami)
+exit
