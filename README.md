@@ -32,4 +32,6 @@ This repository contains various shell scripts for system administration tasks a
 - `setup_python_venv.sh` - Installs Python if needed and creates a virtual environment.
 
 ## Python
-- `list_nemethge_repos.py` - Fetches and prints public repositories for GitHub user `nemethge`.
+- `list_nemethge_repos.py` - Retrieves all public repositories for GitHub user
+  `nemethge` using the GitHub API (supports pagination and optional
+  `GITHUB_TOKEN` authentication).
