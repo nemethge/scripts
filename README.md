@@ -36,6 +36,8 @@ The scripts are primarily written for **Debian-based** systems and cover tasks s
 | `set_hostname.sh`         | Interactive hostname changer. |
 | `set_static_ip.sh`        | Configures static IP for current interface. |
 | `setup_python_venv.sh`    | Creates and activates Python virtualenv. |
+| `fts.sh`                  | Performs initial Debian setup: updates system, sets hostname, and configures static IP automatically. |
+
 
 ---
 
