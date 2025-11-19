@@ -34,7 +34,6 @@ add_config() {
     local description="$1"
     local command="$2"
     
-    # Check if the exact line already exists in the file
     if grep -Fxq "$command" "$NANORC_FILE"; then
         echo "   [SKIP] $description (already active)"
     else
@@ -44,19 +43,17 @@ add_config() {
 }
 
 echo ">> Applying settings to $NANORC_FILE..."
-
-# Create the file if it doesn't exist
 touch "$NANORC_FILE"
 
 # --- Configuration Section ---
 
-# Enable Syntax Highlighting (links to the downloaded repo)
-add_config "Syntax Highlighting include" 'include "~/.nano/*.nanorc"'
+# Syntax highlighting include (must use full path, NOT ~)
+add_config "Syntax Highlighting include" "include \"$HOME/.nano/*.nanorc\""
 
 # UI Settings
 add_config "Line Numbers" "set linenumbers"
 add_config "Mouse Support" "set mouse"
-add_config "Smooth Scrolling" "set smooth"
+# NOTE: Nano 8.x does NOT support set smooth → removed
 
 # Indentation Settings
 add_config "Auto Indentation" "set autoindent"
@@ -64,7 +61,6 @@ add_config "Tab Size (4 spaces)" "set tabsize 4"
 add_config "Convert Tabs to Spaces" "set tabstospaces"
 
 # System Settings
-# Prevents nano from creating backup files ending with ~
-add_config "No Backup Files" "set nobackup"
+# Nano 8.x does NOT support 'set nobackup' → removed
 
 echo ">> Setup complete! Open nano to see the changes."
