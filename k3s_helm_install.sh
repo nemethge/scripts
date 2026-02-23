@@ -29,8 +29,10 @@ helm search postgres
 
 # Install NATS with Helm
 # https://hub.helm.sh/charts/bitnami/nats
+# Usage: export NATS_PASSWORD='<strong-random-password>'
+: "${NATS_PASSWORD:?Set NATS_PASSWORD before running this script}"
 helm install --name nats --namespace demo \
-	--set auth.enabled=true,auth.user=admin,auth.password=REPLACE_WITH_STRONG_PASSWORD \
+	--set auth.enabled=true,auth.user=admin,auth.password=${NATS_PASSWORD} \
 	stable/nats
 	
 # Check
